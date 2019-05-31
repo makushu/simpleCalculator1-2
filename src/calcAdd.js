@@ -1,23 +1,39 @@
-function add(num1, num2){
-    return num1 + num2;
-}
-
-function addMore(num1, num2, num3, num4){
-    var sum = 0;
-    for(var a=0; a<arguments.length; a++){
-        sum += arguments[a];
+class Calculator{
+    constructor(){
+        this.array = [];
     }
-    return sum;
+
+last(){
+    return this.result;
 }
 
-function multiply(num1, num2){
-    return num1 * num2;
-}
-
-function multiplyMore(num1, num2, num3){
-    var product = 1;
+ add(){
+    
+    this.result = 0;
     for(var a=0; a<arguments.length; a++){
-        product *= arguments[a];
+        this.result += parseFloat(arguments[a]);
     }
-    return product;
+    return this.result;
 }
+
+ multiply(){
+    
+    this.result = 1;
+    for(var a=0; a<arguments.length; a++){
+        this.result *= parseFloat(arguments[a]);
+    }
+    return this.result;
+}
+
+    set_slot(number){
+        this.array.push(this.last);
+        return this.array[number-1];
+
+    }
+ 
+    get_slot(number){
+        return this.array[number-1];
+    }
+}
+
+
