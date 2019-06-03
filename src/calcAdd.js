@@ -1,6 +1,7 @@
 class Calculator{
     constructor(){
-        this.array = [];
+        this.result = 0;
+        this.slot = [];
     }
 
 last(){
@@ -13,6 +14,7 @@ last(){
     for(var a=0; a<arguments.length; a++){
         this.result += parseFloat(arguments[a]);
     }
+
     return this.result;
 }
 
@@ -25,15 +27,15 @@ last(){
     return this.result;
 }
 
-    set_slot(number){
-        this.array.push(this.last);
-        return this.array[number-1];
+set_slot(number){
+    this.slot[number] = this.result;
+}
 
-    }
- 
-    get_slot(number){
-        return this.array[number-1];
-    }
+get_slot(number){
+    return this.slot[number];
+}
+
+
 }
 
 

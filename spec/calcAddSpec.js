@@ -39,17 +39,21 @@ describe("Last", function() {
 });
 
 describe("Memory", function() {
-
-    it("should return 10", function(){
-        
+  /*  it("should return 10", function(){
+        //this.result = calculator.last();
     calculator.add(1,2,3,4);
     calculator.set_slot(1);
-    let result = calculator.get_slot(1);
+    let result = calculator.multiply(calculator.get_slot(1));
     expect(result).toBe(10);
 
-});
+});*/
 
-
+ it("should return 12", function(){
+     calculator.add(1,2);
+    calculator.set_slot(1);
+    let result = calculator.multiply(calculator.get_slot(1), 4);
+    expect(result).toBe(12);
+ })
 });
 
 });
